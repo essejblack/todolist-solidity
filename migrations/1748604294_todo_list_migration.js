@@ -1,3 +1,5 @@
-module.exports = function(_deployer) {
-  // Use deployer to state migration tasks.
+const TodoListContract = artifacts.require("TodoList");
+
+module.exports = function (deployer) {
+  deployer.deploy(TodoListContract);
 };
