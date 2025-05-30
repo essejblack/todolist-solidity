@@ -25,6 +25,7 @@ module.exports = {
      host: process.env.GANACHE_HOST,     // Localhost (default: none)
      port: process.env.GANACHE_PORT,            // Standard Ethereum port (default: none)
      network_id: process.env.GANACHE_NETWORK_ID,       // Any network (default: none)
+    //  gas: process.env.GANACHE_GAS_LIMIT,       
     },
     //
     // An additional network, but with some advanced options…
@@ -70,7 +71,7 @@ module.exports = {
       //    enabled: false,
       //    runs: 200
       //  },
-      //  evmVersion: "byzantium"
+      // //  evmVersion: "byzantium"
       // }
     }
   },
