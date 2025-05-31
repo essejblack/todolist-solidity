@@ -2,8 +2,6 @@
 pragma solidity ^0.8.21;
 
 contract TodoList {
-    event LogAddress(address _address);
-
     struct Task {
         string title;
         string description;
@@ -16,7 +14,6 @@ contract TodoList {
 
     constructor() {
         owner = msg.sender;
-        emit LogAddress(address(this));
     }
 
     modifier onlyOwner() {
