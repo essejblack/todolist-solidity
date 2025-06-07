@@ -21,7 +21,7 @@ contract TodoList {
         _;
     }
 
-    modifier checkTaskExists(uint index) {
+    modifier checkTaskExists(uint256 index) {
         require(index < tasks.length, "Task does not exist.");
         _;
     }
@@ -41,7 +41,7 @@ contract TodoList {
     }
 
     function toggleCompletion(
-        uint index
+        uint256 index
     ) public onlyOwner checkTaskExists(index) {
         tasks[index].completed = !tasks[index].completed;
     }
@@ -51,18 +51,19 @@ contract TodoList {
     }
 
     function getTask(
-        uint index
+        uint256 index
     ) public view checkTaskExists(index) returns (Task memory) {
-        return tasks[index];
+        Task memory task = tasks[index];
+        return task;
     }
 
-    function getTaskCount() public view returns (uint) {
+    function getTaskCount() public view returns (uint256) {
         return tasks.length;
     }
 
-    function getCompletedTaskCount() public view returns (uint) {
-        uint count = 0;
-        for (uint i = 0; i < tasks.length; i++) {
+    function getCompletedTaskCount() public view returns (uint256) {
+        uint256 count = 0;
+        for (uint256 i = 0; i < tasks.length; i++) {
             if (tasks[i].completed) {
                 count++;
             }
@@ -70,7 +71,7 @@ contract TodoList {
         return count;
     }
 
-    function deleteTask(uint index) public onlyOwner checkTaskExists(index) {
+    function deleteTask(uint256 index) public onlyOwner checkTaskExists(index) {
         tasks[index] = tasks[tasks.length - 1];
         tasks.pop();
     }
