@@ -10,12 +10,15 @@
 
 ### Compilation
 
-Compile the smart contracts using Truffle:
-
+Compile the smart contracts using Hardhat:
 ```sh
-truffle compile
+npx hardhat compile
 ```
 
 ```sh
-truffle migrate
+npx hardhat node
+```
+
+```sh
+npx hardhat ignition deploy ignition/modules/Todo.ts --network localhost
 ```
